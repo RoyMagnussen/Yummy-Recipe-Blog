@@ -7,6 +7,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
   - [Table of Content](#table-of-content)
   - [UX](#ux)
     - [User Stories](#user-stories)
+    - [Wireframes](#wireframes)
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Features Left to Implement](#features-left-to-implement)
@@ -42,6 +43,9 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 | 16                | Site User      | Delete a recipe                                | Remove it from the site                                                                             | ❌        |
 | 17                | Site User      | Like a recipe                                  | Support the author and save the recipe to my liked recipes list so I can find it easier             | ❌        |
 
+### Wireframes
+
+The wireframes for the project can be found [here](docs/wireframes/yummy_recipe_blog_wireframes.pdf).
 
 ## Features
 
