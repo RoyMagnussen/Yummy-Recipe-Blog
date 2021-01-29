@@ -1,8 +1,6 @@
-# Your Project's Name
+# Yummy! Recipe Blog
 
-One or two paragraphs providing an overview of your project.
-
-Essentially, this part is your sales pitch.
+Yummy! Recipe Blog is a pay once membership site where food lovers are able to create and share recipes with other users of the site as well as gain inspiration for other dishes to make.
  
 ## UX
  
