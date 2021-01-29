@@ -11,6 +11,29 @@ In particular, as part of this section we recommend that you provide a list of U
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
+### User Stories
+
+| **User Story ID** | **AS A/AN**    | **I WANT TO BE ABLE TO…**                      | **SO THAT I CAN…**                                                                                  | **DONE** |
+|:-----------------:|:--------------:|:----------------------------------------------:|:---------------------------------------------------------------------------------------------------:|:--------:|
+| 1                 | Potential User | Easily sign up for an account                  | Have a personal account and be able to view my profile                                              | ❌        |
+| 2                 | Potential User | Receive an email confirmation after signing up | Verify that my account sign up was successful                                                       | ❌        |
+| 3                 | Site User      | Easily login or logout                         | Access my personal account information                                                              | ❌        |
+| 4                 | Site User      | Easily recover my password in case I forget it | Recover access to my account                                                                        | ❌        |
+| 5                 | Site User      | Have a personalised user profile               | View and edit my personal details such as name, username, profile picture, email and password       | ❌        |
+| 6                 | Site User      | View my profile                                | Look at all of the recipes that I have created, my liked recipes and my comments                    | ❌        |
+| 7                 | Site User      | View my liked recipes                          | Find a specific recipe in my liked recipes                                                          | ❌        |
+| 8                 | Site User      | Remove a liked recipe                          | Remove it from the liked recipes list                                                               | ❌        |
+| 9                 | Site User      | View a list of recipes                         | Select some recipes to use                                                                          | ❌        |
+| 10                | Site User      | Sort a specific category of recipe             | Find the most liked recipe in the specific category or sort the recipes by name                     | ❌        |
+| 11                | Site User      | Search for a recipe by name or category        | Find a specific recipe I'd like to use                                                              | ❌        |
+| 12                | Site User      | View the details of a recipe                   | Find more information about it such as the ingredients and steps                                    | ❌        |
+| 13                | Site User      | Visit another users' profile                   | Find more information about them and look at the recipes that they have created                     | ❌        |
+| 14                | Site User      | Create a recipe                                | Share it with other users                                                                           | ❌        |
+| 15                | Site User      | Edit a recipe                                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture | ❌        |
+| 16                | Site User      | Delete a recipe                                | Remove it from the site                                                                             | ❌        |
+| 17                | Site User      | Like a recipe                                  | Support the author and save the recipe to my liked recipes list so I can find it easier             | ❌        |
+
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
