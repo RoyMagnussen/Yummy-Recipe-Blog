@@ -1,15 +1,47 @@
 # Yummy! Recipe Blog
 
 Yummy! Recipe Blog is a pay once membership site where food lovers are able to create and share recipes with other users of the site as well as gain inspiration for other dishes to make.
+
+## Table of Content
+- [Yummy! Recipe Blog](#yummy-recipe-blog)
+  - [Table of Content](#table-of-content)
+  - [UX](#ux)
+    - [User Stories](#user-stories)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Technologies Used](#technologies-used)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
  
 ## UX
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+### User Stories
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+| **User Story ID** | **AS A/AN**    | **I WANT TO BE ABLE TO…**                      | **SO THAT I CAN…**                                                                                  | **DONE** |
+|:-----------------:|:--------------:|:----------------------------------------------:|:---------------------------------------------------------------------------------------------------:|:--------:|
+| 1                 | Potential User | Easily sign up for an account                  | Have a personal account and be able to view my profile                                              | ❌        |
+| 2                 | Potential User | Receive an email confirmation after signing up | Verify that my account sign up was successful                                                       | ❌        |
+| 3                 | Site User      | Easily login or logout                         | Access my personal account information                                                              | ❌        |
+| 4                 | Site User      | Easily recover my password in case I forget it | Recover access to my account                                                                        | ❌        |
+| 5                 | Site User      | Have a personalised user profile               | View and edit my personal details such as name, username, profile picture, email and password       | ❌        |
+| 6                 | Site User      | View my profile                                | Look at all of the recipes that I have created, my liked recipes and my comments                    | ❌        |
+| 7                 | Site User      | View my liked recipes                          | Find a specific recipe in my liked recipes                                                          | ❌        |
+| 8                 | Site User      | Remove a liked recipe                          | Remove it from the liked recipes list                                                               | ❌        |
+| 9                 | Site User      | View a list of recipes                         | Select some recipes to use                                                                          | ❌        |
+| 10                | Site User      | Sort a specific category of recipe             | Find the most liked recipe in the specific category or sort the recipes by name                     | ❌        |
+| 11                | Site User      | Search for a recipe by name or category        | Find a specific recipe I'd like to use                                                              | ❌        |
+| 12                | Site User      | View the details of a recipe                   | Find more information about it such as the ingredients and steps                                    | ❌        |
+| 13                | Site User      | Visit another users' profile                   | Find more information about them and look at the recipes that they have created                     | ❌        |
+| 14                | Site User      | Create a recipe                                | Share it with other users                                                                           | ❌        |
+| 15                | Site User      | Edit a recipe                                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture | ❌        |
+| 16                | Site User      | Delete a recipe                                | Remove it from the site                                                                             | ❌        |
+| 17                | Site User      | Like a recipe                                  | Support the author and save the recipe to my liked recipes list so I can find it easier             | ❌        |
+
 
 ## Features
 
