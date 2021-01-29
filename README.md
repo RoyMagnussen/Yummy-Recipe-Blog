@@ -45,6 +45,8 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 
 ### Wireframes
 
+The wireframes for the project can be found [here](docs/wireframes/yummy_recipe_blog_wireframes.pdf).
+
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
