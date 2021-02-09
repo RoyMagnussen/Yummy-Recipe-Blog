@@ -10,3 +10,25 @@ body {
     color: #333;
     background: url('/media/background.jpg') repeat center center fixed;
 }
+
+// Fonts & Text
+.logo-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+}
+
+// Stylings
+.rounded-20 { border-radius: 20px; }
+
+.border-dark-grey { border: 1px solid #333; }
+
+// Components
+.form-btn { font-size: 2rem; }
+
+.form-btn:hover,
+.form-btn:active,
+.form-btn:focus {
+    background-color: #333;
+    color: white;
+    transition: all ease-in 0.2s;
+}
