@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import redirect, render
 from django.conf import settings
 from django.urls import reverse
@@ -68,3 +67,21 @@ def payment(request) -> render:
 
     elif request.method == 'GET':
         return redirect('sign_up')
+
+
+def sign_up_complete(request) -> render:
+    """
+    Renders the signup complete view.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        render: A HttpResponse ojbect whose content is filled by the given template and context.
+    """
+    context = {
+        'title': 'Sign Up Complete',
+        'user_email': request.session['email']
+    }
+
+    return render(request, 'accounts/signup_complete.html', context)
