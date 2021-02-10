@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container text-uppercase" data-aos="fade-right" data-aos-duration="1000">
+    <div class="row vh-100">
+        <div class="col-12 col-md-8 col-lg-6 m-auto">
+            <div class="rounded-20 shadow bg-white p-3 p-md-5">
+                <p class="lead text-center">Ony a one-time payment of £5 stands in your way to having a lifetime membership to <span class="logo-font">Yummy!</span>.</p>
+                <button id="buy_now_btn" class="btn btn-btn-lg w-100 border-dark-grey logo-font form-btn text-uppercase">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block extra_js %}
+{{ block.super }}
+<script>
+    var buy_now_button = document.querySelector('#buy_now_btn');
+
+    var stripe = Stripe('{{ stripe_public_key }}');
+
+    buy_now_button.addEventListener('click', function (event) {
+        stripe.redirectToCheckout({
+            sessionId: '{{ session_id }}',
+        }).then(function (result) {
+
+        });
+    });
+</script>
+{% endblock extra_js %}
