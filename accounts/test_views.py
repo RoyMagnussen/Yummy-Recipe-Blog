@@ -1,3 +1,4 @@
+from django.http import response
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .forms import AccountSignUpForm
@@ -6,6 +7,11 @@ from .forms import AccountSignUpForm
 
 
 class TestViews(TestCase):
+    
+    def test_get_login_page(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'accounts/login.html')
 
     def test_get_signup_page(self):
         response = self.client.get('/signup/')
