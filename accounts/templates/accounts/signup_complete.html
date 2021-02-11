@@ -8,7 +8,7 @@
                 <h1 class="display-4 text-center logo-font">Sign Up Complete</h1>
                 <p class="text-center mt-5">We have sent a confirmation email to: <strong>{{ user_email }}</strong>. Please check your junk folder just in case.</p>
                 <!-- TODO: Add url function for login page -->
-                <a href="" class="btn btn-lg form-btn logo-font w-100 border-dark-grey">Login</a>
+                <a href="{% url 'login_page' %}" class="btn btn-lg form-btn logo-font w-100 border-dark-grey">Login</a>
             </div>
         </div>
     </div>
