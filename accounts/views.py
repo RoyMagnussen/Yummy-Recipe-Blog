@@ -3,13 +3,22 @@ from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.urls import reverse
-from .forms import AccountSignUpForm, AccountLoginForm
+from .forms import AccountSignUpForm, AccountLoginForm, ResetPasswordForm
 import stripe
 
 # Create your views here.
 
 
-def login_page(request):
+def login_page(request) -> render:
+    """
+    Renders the login view.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        render: A HttpResponse object whose content is filled by the given template and context.
+    """
     form = AccountLoginForm(request)
     context = {
         'title': 'Log In',
@@ -37,7 +46,7 @@ def sign_up(request) -> render:
         request (HttpRequest): A HttpRequest class object.
 
     Returns:
-        render: A HttpResponse ojbect whose content is filled by the given template and context.
+        render: A HttpResponse object whose content is filled by the given template and context.
     """
     form = AccountSignUpForm()
     context = {
@@ -56,7 +65,7 @@ def payment(request) -> render:
         request (HttpRequest): A HttpRequest class object.
 
     Returns:
-        render: A HttpResponse ojbect whose content is filled by the given template and context.
+        render: A HttpResponse object whose content is filled by the given template and context.
     """
     if request.method == 'POST':
         form = AccountSignUpForm(request.POST)
@@ -101,7 +110,7 @@ def sign_up_complete(request) -> render:
         request (HttpRequest): A HttpRequest class object.
 
     Returns:
-        render: A HttpResponse ojbect whose content is filled by the given template and context.
+        render: A HttpResponse object whose content is filled by the given template and context.
     """
     context = {
         'title': 'Sign Up Complete',
@@ -121,3 +130,12 @@ def sign_up_complete(request) -> render:
     email.send(fail_silently=True)
 
     return render(request, 'accounts/signup_complete.html', context)
+
+
+def reset_password(request):
+    form = ResetPasswordForm()
+    context = {
+        'title': 'Reset Password',
+        'form': form,
+    }
+    return render(request, 'accounts/reset_password.html', context)
