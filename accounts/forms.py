@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm
+from django.contrib.auth.forms import SetPasswordForm, UserCreationForm, AuthenticationForm, PasswordResetForm
 from django.contrib.auth.models import User
 from django.forms.fields import EmailField
 
@@ -48,7 +48,25 @@ class ResetPasswordForm(PasswordResetForm):
     Args:
         PasswordResetForm (class): Standard password reset form provided by Django. Can be found here: `django.contrib.auth.forms`
     """
-    def __init__(self) -> None:
+
+    def __init__(self):
         super(PasswordResetForm, self).__init__()
 
         self.fields['email'].widget.attrs['class'] = 'form-control form-control-lg border-0'
+
+
+class AccountChangePasswordForm(SetPasswordForm):
+    """
+    Custom Password Change Form which added some custom styling to the fields.
+
+    Args:
+        PasswordChangeForm (class): Standard password set form provided by Django. Can be found here: `django.contrib.auth.forms`
+    """
+
+    def __init__(self, *args, **kwargs):
+        super(AccountChangePasswordForm, self).__init__(*args, **kwargs)
+
+        self.fields['new_password2'].label = 'Confirm Password'
+
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control form-control-lg border-0'
