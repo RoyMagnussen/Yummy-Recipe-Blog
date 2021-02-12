@@ -3,7 +3,12 @@ from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.urls import reverse
-from .forms import AccountSignUpForm, AccountLoginForm, ResetPasswordForm
+from .forms import AccountChangePasswordForm, AccountSignUpForm, AccountLoginForm, ResetPasswordForm
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_text
+from django.contrib.auth.models import User
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.contrib.sites.shortcuts import get_current_site
 import stripe
 
 # Create your views here.
@@ -70,7 +75,8 @@ def payment(request) -> render:
     if request.method == 'POST':
         form = AccountSignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.is_active = True
+            form.save(commit=True)
             request.session['email'] = form.cleaned_data.get('email')
             request.session['username'] = form.cleaned_data.get('username')
 
@@ -132,10 +138,109 @@ def sign_up_complete(request) -> render:
     return render(request, 'accounts/signup_complete.html', context)
 
 
-def reset_password(request):
+def reset_password(request) -> render:
+    """
+    Renders the reset password view.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        render: A HttpResponse object whose content is filled by the given template and context.
+    """
+
     form = ResetPasswordForm()
     context = {
         'title': 'Reset Password',
         'form': form,
     }
+
+    if request.method == 'POST':
+        user_email = request.POST['email']
+        user = User.objects.get(email=user_email)
+        token_generator = PasswordResetTokenGenerator()
+        current_site = get_current_site(request)
+
+        message_content = {
+            'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+            'token': token_generator.make_token(user),
+            'domain': current_site.domain,
+        }
+
+        link = reverse('reset_password_send', kwargs={
+            'uidb64': message_content['uid'],
+            'token': message_content['token'],
+        })
+
+        reset_url = 'http://'+current_site.domain+link
+
+        email = EmailMessage(
+            subject='Reset Your Password',
+            body=f'Hi {user.username}!\n\nYou are seeing this email has you have requested to reset your password.\n\nPlease follow the link below to reset you password:\n{reset_url}',
+            from_email=settings.EMAIL_HOST_USER,
+            to=[user_email]
+        )
+
+        email.send(fail_silently=True)
+
+        return redirect('reset_password_sent')
+
     return render(request, 'accounts/reset_password.html', context)
+
+
+def reset_password_sent(request):
+    """
+    Renders the reset password sent view.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        render: A HttpResponse object whose content is filled by the given template and context.
+    """
+    context = {
+        'title': 'Email Sent',
+    }
+
+    return render(request, 'accounts/reset_password_sent.html', context)
+
+
+def reset_password_change_password(request, uidb64, token):
+    """
+    Renders the reset password change password view.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        render: A HttpResponse object whose content is filled by the given template and context.
+    """
+    user_id = force_text(urlsafe_base64_decode(uidb64).decode())
+    user = User.objects.get(pk=user_id)
+    form = AccountChangePasswordForm(user)
+    context = {
+        'title': 'Change Password',
+        'form': form,
+    }
+
+    if request.method == 'POST':
+        
+        user_id = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=user_id)
+        form = AccountChangePasswordForm(user, request.POST)
+        if form.is_valid():
+            password = form.cleaned_data.get('new_password1')
+            user.set_password(password)
+            user.save()
+
+        return redirect('reset_password_confirm')
+
+    return render(request, 'accounts/reset_password_change_password.html', context)
+
+
+def reset_password_confirm(request):
+    context = {
+        'title': 'Password Changed',
+    }
+
+    return render(request, 'accounts/reset_password_confirm.html', context)
