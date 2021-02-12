@@ -1,11 +1,32 @@
+from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.urls import reverse
-from .forms import AccountSignUpForm
+from .forms import AccountSignUpForm, AccountLoginForm
 import stripe
 
 # Create your views here.
+
+
+def login_page(request):
+    form = AccountLoginForm(request)
+    context = {
+        'title': 'Log In',
+        'form': form
+    }
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return redirect('login_page')
+
+    return render(request, 'accounts/login.html', context)
 
 
 def sign_up(request) -> render:
@@ -52,7 +73,8 @@ def payment(request) -> render:
                     'quantity': 1,
                 }],
                 mode='payment',
-                success_url=request.build_absolute_uri(reverse('sign_up_complete')) + '?success_id={CHECKOUT_SESSION_ID}',
+                success_url=request.build_absolute_uri(
+                    reverse('sign_up_complete')) + '?success_id={CHECKOUT_SESSION_ID}',
                 cancel_url=request.build_absolute_uri(reverse('payment'))
             )
 

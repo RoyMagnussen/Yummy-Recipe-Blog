@@ -13,6 +13,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [1. Sign Up Page](#1-sign-up-page)
       - [2. Payment Page](#2-payment-page)
       - [3. Sign Up Complete Page](#3-sign-up-complete-page)
+      - [4. Login Page](#4-login-page)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -30,7 +31,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 | :---------------: | :------------: | :--------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :------: |
 |         1         | Potential User |         Easily sign up for an account          |                       Have a personal account and be able to view my profile                        |    ✔     |
 |         2         | Potential User | Receive an email confirmation after signing up |                            Verify that my account sign up was successful                            |    ✔     |
-|         3         |   Site User    |             Easily login or logout             |                               Access my personal account information                                |    ❌     |
+|         3         |   Site User    |             Easily login or logout             |                               Access my personal account information                                |    ✔     |
 |         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |    ❌     |
 |         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ❌     |
 |         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ❌     |
@@ -79,6 +80,12 @@ This is to prevent the user from purchasing a membership without creating an acc
 The `sign up complete` page notifies the user that their account creation has been successful and that an email has been sent to the their email to confirm that it has.
 
 The page also has a button to the `login` page where they are able to log in after they recieve the email.
+
+#### 4. Login Page
+
+The `login` page allows the user to easily log in by them providing their username and password.
+
+After they log in, the user is then redirected to the `home` page.
 
 ### Features Left to Implement
 - Another feature idea
