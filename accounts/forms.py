@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm
 from django.contrib.auth.models import User
 from django.forms.fields import EmailField
 
@@ -26,9 +26,29 @@ class AccountSignUpForm(UserCreationForm):
 
 
 class AccountLoginForm(AuthenticationForm):
+    """
+    Custom Login Form which added some custom styling to the fields.
+
+    Args:
+        AuthenticationForm (class): Standard user login form provided by Django. Can be found here: `django.contrib.auth.forms`
+    """
+
     def __init__(self, request, *args, **kwargs):
         super(AccountLoginForm, self).__init__(
             request=request, *args, **kwargs)
 
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control form-control-lg border-0'
+
+
+class ResetPasswordForm(PasswordResetForm):
+    """
+    Custom Password reset Form which added some custom styling to the field.
+
+    Args:
+        PasswordResetForm (class): Standard password reset form provided by Django. Can be found here: `django.contrib.auth.forms`
+    """
+    def __init__(self) -> None:
+        super(PasswordResetForm, self).__init__()
+
+        self.fields['email'].widget.attrs['class'] = 'form-control form-control-lg border-0'
