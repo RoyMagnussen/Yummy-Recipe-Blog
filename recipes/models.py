@@ -16,8 +16,12 @@ class Category(Model):
     Args:
         Model (class): Base Model Class provided by Django. Can be found here: `django.db.models`
     """
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = CharField(max_length=20, null=False, blank=False)
-    
+
     def __str__(self) -> str:
         return self.name
 
@@ -40,6 +44,6 @@ class Recipe(Model):
     likes = IntegerField(default=0)
     author = ForeignKey(User, on_delete=CASCADE)
     date_created = DateTimeField(default=timezone.now)
-    
+
     def __str__(self) -> str:
         return self.name
