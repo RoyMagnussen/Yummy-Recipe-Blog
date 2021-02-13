@@ -5,13 +5,21 @@
 
 html { scroll-behavior: smooth; }
 
-body {
+* {
     font-family: 'Quicksand', sans-serif;
-    color: #333;
-    background: url('/media/background.jpg') repeat center center fixed;
+    color: #333 !important;
 }
 
+body { 
+    background: url('/media/background.jpg') repeat center center fixed;
+    text-transform: uppercase;
+ }
+
 // Fonts & Text
+.logo {
+    font-size: 2.5rem;
+}
+
 .logo-font {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
@@ -21,6 +29,14 @@ body {
 .rounded-20 { border-radius: 20px; }
 
 .border-dark-grey { border: 1px solid #333; }
+
+.icon-md {
+    font-size: 1.5rem;
+}
+
+.icon-lg {
+    font-size: 2rem;
+}
 
 // Components
 .form-btn { font-size: 2rem; }
