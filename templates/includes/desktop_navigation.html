@@ -1,0 +1,73 @@
+<header class="container-fluid fixed-top shadow bg-white d-none d-lg-block">
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar container-fluid">
+                <a href="{% url 'home' %}" class="navbar-brand logo logo-font">Yummy!</a>
+                <ul class="navbar nav">
+                    <li class="nav-item mx-3">
+                        <!-- TODO: Add url function for add recipe page -->
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-plus-square icon-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-3 dropdown">
+                        <a class="nav-link" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!-- TODO: Add if statement to check if user has a profile picture, if yes, display profile picture, if not, display icon -->
+                            <i class="bi bi-person icon-lg"></i>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="accountDropdown">
+                            <!-- TODO: Add url function for profile page -->
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'logout_page' %}" class="dropdown-item">Logout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#searchBar" role="button" aria-expanded="false" aria-controls="searchBar">
+                            <i class="bi bi-search icon-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-12">
+            <nav class="navbar">
+                <ul class="navbar nav mx-auto">
+                    <li class="nav-item mx-3">
+                        <!-- TODO: Add url function for popular recipes -->
+                        <a href="#" class="nav-link">Popular</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <!-- TODO: Add url function for meat recipes -->
+                        <a href="#" class="nav-link">Meat</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <!-- TODO: Add url function for fish recipes -->
+                        <a href="#" class="nav-link">Fish</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <!-- TODO: Add url function for vegan & vegetarian recipes -->
+                        <a href="#" class="nav-link">Vegan & Vegetarian</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-12">
+            <div class="collapse my-3 w-100" id="searchBar">
+                <div class="row">
+                    <div class="col-6 mx-auto">
+                        <form action="" method="get">
+                            <div class="input-group rounded border-dark-grey">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text border-0 bg-white h-100 d-flex">
+                                        <i class="bi bi-search icon-md"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="q" id="searchBar" class="form-control form-control-lg border-0">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
