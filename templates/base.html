@@ -21,6 +21,11 @@
         <title>{{ title }} | Yummy! Recipe Blog</title>
     </head>
     <body>
+        {% if user.is_authenticated %}
+            {% include 'includes/mobile_navigation.html' %}
+            {% include 'includes/tablet_navigation.html' %}
+            {% include 'includes/desktop_navigation.html' %}
+        {% endif %}
         {% block content %}
             
         {% endblock content %}
