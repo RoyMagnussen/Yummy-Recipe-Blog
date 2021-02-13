@@ -14,6 +14,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [2. Payment Page](#2-payment-page)
       - [3. Sign Up Complete Page](#3-sign-up-complete-page)
       - [4. Login Page](#4-login-page)
+      - [5. Reset Password](#5-reset-password)
     - [Features Left to Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -32,7 +33,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         1         | Potential User |         Easily sign up for an account          |                       Have a personal account and be able to view my profile                        |    ✔     |
 |         2         | Potential User | Receive an email confirmation after signing up |                            Verify that my account sign up was successful                            |    ✔     |
 |         3         |   Site User    |             Easily login or logout             |                               Access my personal account information                                |    ✔     |
-|         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |    ❌     |
+|         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |   ✔      |
 |         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ❌     |
 |         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ❌     |
 |         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ❌     |
@@ -86,6 +87,10 @@ The page also has a button to the `login` page where they are able to log in aft
 The `login` page allows the user to easily log in by them providing their username and password.
 
 After they log in, the user is then redirected to the `home` page.
+
+#### 5. Reset Password
+
+The `reset password` page allows users to change their password by having an email sent to them with a one-time encoded link where they are then able to change their password and updated it by getting the user to provide their email address.
 
 ### Features Left to Implement
 - Another feature idea
