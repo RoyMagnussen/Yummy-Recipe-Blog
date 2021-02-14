@@ -34,13 +34,14 @@ class Recipe(Model):
         Model (class): Base Model Class provided by Django. Can be found here: `django.db.models`
     """
     name = CharField(max_length=100, null=False, blank=False)
-    image = ImageField()
+    image = ImageField(upload_to='recipe_images')
     ingredients = TextField(null=False, blank=False)
     steps = TextField(null=False, blank=False)
     category = ForeignKey(Category, on_delete=CASCADE)
     servings = IntegerField(null=False, blank=False)
     prep_time = IntegerField(null=False, blank=False)
     cook_time = IntegerField(null=False, blank=False)
+    total_time = IntegerField(null=False, blank=False)
     likes = IntegerField(default=0)
     author = ForeignKey(User, on_delete=CASCADE)
     date_created = DateTimeField(default=timezone.now)
