@@ -1,4 +1,4 @@
-<header class="container-fluid fixed-top shadow bg-white d-md-none">
+<header class="container-fluid fixed-top sticky-top shadow bg-white d-md-none">
     <div class="row">
         <div class="col-12">
             <nav class="navbar container-fluid">
@@ -15,13 +15,13 @@
         <div class="col-12">
             <nav class="navbar container-fluid">
                 <ul class="navbar nav mx-auto">
-                    <li class="nav-item mx-3">
+                    <li class="nav-item mx-2">
                         <!-- TODO: Add url function for add recipe page -->
                         <a href="#" class="nav-link">
                             <i class="bi bi-plus-square icon-lg"></i>
                         </a>
                     </li>
-                    <li class="nav-item mx-3 dropdown">
+                    <li class="nav-item mx-2 dropdown">
                         <a class="nav-link" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <!-- TODO: Add if statement to check if user has a profile picture, if yes, display profile picture, if not, display icon -->
                             <i class="bi bi-person icon-lg"></i>
@@ -32,7 +32,7 @@
                             <a href="{% url 'logout_page' %}" class="dropdown-item">Logout</a>
                         </div>
                     </li>
-                    <li class="nav-item mx-3">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" data-bs-toggle="collapse" href="#searchBar" role="button" aria-expanded="false" aria-controls="searchBar">
                             <i class="bi bi-search icon-lg"></i>
                         </a>
