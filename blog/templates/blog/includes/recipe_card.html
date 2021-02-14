@@ -1,0 +1,58 @@
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+    <div class="card shadow recipe-card border-0">
+        <img src="{{ recipe.image.url }}" class="card-img-top recipe-card-image" alt="{{ recipe.name }}">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <p class="logo-font">{{ recipe.name }}</p>
+                </div>
+                <div class="col-2">
+                    {% if recipe.author.profile.image %}
+                        <img src="{{ recipe.author.profile.image.url }}" alt="{{ recipe.author.username }}'s Profile Picture" class="rounded-circle recipe-card-profile-picture">
+                    {% else %}
+                        <i class="bi bi-person"></i>
+                    {% endif %}
+                </div>
+                <div class="col-10">
+                    <small>
+                        <!-- TODO: Add url function for users profile page -->
+                        <a href="#" class="text-decoration-none">{{ recipe.author.username }}</a>
+                    </small>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p>Serves: {{ recipe.servings }}</p>
+                    <p>
+                        <i class="bi bi-clock"></i>
+                        <span>{{ recipe.total_time }} Minutes</span>
+                    </p>
+                    <p>
+                        <i class="bi bi-tag-fill"></i>
+                        <span>{{ recipe.category }}</span>
+                    </p>
+                    {% if recipe.author.username == user.username %}
+                        <a class="disabled text-decoration-none">
+                            <i class="bi bi-heart"></i>
+                            <span>{{ recipe.likes }}</span>
+                        </a>
+                    {% else %}
+                        {% if recipe in recipe.author.profile.liked_recipes %}
+                            <!-- TODO: Add url function to unlike recipe -->
+                            <a href="#" class="text-decoration-none">
+                                <i class="bi bi-heart-fill oink-heart"></i>
+                                <span>{{ recipe.likes }}</span>
+                            </a>
+                        {% else %}
+                            <!-- TODO: Add url function to like recipe -->
+                            <a href="#" class="text-decoration-none">
+                                <i class="bi bi-heart"></i>
+                                <span>{{ recipe.likes }}</span>
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
