@@ -1,0 +1,14 @@
+body {
+    background: #dbd8d6;
+}
+
+.recipe-card {
+    height: auto;
+}
+
+.recipe-card-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

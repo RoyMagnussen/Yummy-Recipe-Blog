@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+{% endblock extra_css %}
 {% block content %}
-<h1 class="display-4">HELLO</h1>
-{% endblock content %}
+<div class="container text-uppercase mt-3">
+    {% for recipe in recipes %}
+        <div class="row">
+            {% include 'blog/includes/recipe_card.html' %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}  

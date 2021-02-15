@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -244,3 +244,17 @@ def reset_password_confirm(request):
     }
 
     return render(request, 'accounts/reset_password_confirm.html', context)
+
+
+def logout_user(request) -> redirect:
+    """
+    Logs out the current user and redirects to the log in page.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+
+    Returns:
+        redirect: Redirects the user to the provided url name.
+    """
+    logout(request)
+    return redirect('login_page')

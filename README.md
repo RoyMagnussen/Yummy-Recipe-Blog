@@ -15,7 +15,9 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [3. Sign Up Complete Page](#3-sign-up-complete-page)
       - [4. Login Page](#4-login-page)
       - [5. Reset Password](#5-reset-password)
+      - [6. Home Page](#6-home-page)
     - [Features Left to Implement](#features-left-to-implement)
+      - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -38,7 +40,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ❌     |
 |         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ❌     |
 |         8         |   Site User    |             Remove a liked recipe              |                                Remove it from the liked recipes list                                |    ❌     |
-|         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ❌     |
+|         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ✔     |
 |        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ❌     |
 |        11         |   Site User    |    Search for a recipe by name or category     |                               Find a specific recipe I'd like to use                                |    ❌     |
 |        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ❌     |
@@ -92,8 +94,15 @@ After they log in, the user is then redirected to the `home` page.
 
 The `reset password` page allows users to change their password by having an email sent to them with a one-time encoded link where they are then able to change their password and updated it by getting the user to provide their email address.
 
+#### 6. Home Page
+
+The `home` page allows users to view all of the recipes on the site. It currently only shows the recipes in order from oldest to newest. (Please view the features left to implement section).
+
 ### Features Left to Implement
-- Another feature idea
+
+#### Recipe Sorter
+
+The recipe sorter will allow the users to sort the recipes by name (ascending and descending) and by age (ascending and descending).
 
 ## Technologies Used
 
