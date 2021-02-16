@@ -30,17 +30,20 @@ def login_page(request) -> render:
         'form': form
     }
 
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            return redirect('login_page')
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                return redirect('login_page')
 
-    return render(request, 'accounts/login.html', context)
+        return render(request, 'accounts/login.html', context)
 
 
 def sign_up(request) -> render:
@@ -224,7 +227,7 @@ def reset_password_change_password(request, uidb64, token):
     }
 
     if request.method == 'POST':
-        
+
         user_id = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=user_id)
         form = AccountChangePasswordForm(user, request.POST)
