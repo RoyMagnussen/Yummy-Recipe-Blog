@@ -1,5 +1,5 @@
+from accounts.models import Account
 from django.contrib.auth.forms import SetPasswordForm, UserCreationForm, AuthenticationForm, PasswordResetForm
-from django.contrib.auth.models import User
 from django.forms.fields import EmailField
 
 
@@ -13,7 +13,7 @@ class AccountSignUpForm(UserCreationForm):
     email = EmailField(required=True, label='Email')
 
     class Meta:
-        model = User
+        model = Account
         fields = ['username', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
