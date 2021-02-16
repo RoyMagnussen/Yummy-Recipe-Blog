@@ -38,6 +38,13 @@ body {
     font-size: 2rem;
 }
 
+.navigation-profile-picture {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+
 // Components
 .form-btn { font-size: 2rem; }
 
