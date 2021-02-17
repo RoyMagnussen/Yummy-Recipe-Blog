@@ -9,10 +9,12 @@ from accounts.models import Account
 @login_required(login_url='/')
 def home(request):
     recipes = Recipe.objects.all()
+    user = Account.objects.get(username=request.user.username)
 
     context = {
         'title': 'Home',
         'recipes': recipes,
+        'user': user,
     }
 
     return render(request, 'blog/home.html', context)
