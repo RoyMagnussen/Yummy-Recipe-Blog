@@ -3,13 +3,15 @@ from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.urls import reverse
-from .forms import AccountChangePasswordForm, AccountSignUpForm, AccountLoginForm, ResetPasswordForm
+from .forms import AccountChangePasswordForm, AccountSignUpForm, AccountLoginForm, ResetPasswordForm, AccountUpdateForm
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.sites.shortcuts import get_current_site
 import stripe
+from django.contrib.auth.decorators import login_required
+from .models import Account
 
 # Create your views here.
 
@@ -261,3 +263,24 @@ def logout_user(request) -> redirect:
     """
     logout(request)
     return redirect('login_page')
+
+
+@login_required(login_url='/')
+def update_user_page(request):
+    user = Account.objects.get(username=request.user.username)
+    form = AccountUpdateForm(instance=user)
+    form.is_multipart()
+    context = {
+        'title': 'Update User',
+        'user': user,
+        'form': form,
+    }
+    
+    if request.method == 'POST':
+        form = AccountUpdateForm(request.POST, request.FILES, instance=user)
+        form.is_multipart()
+        if form.is_valid():
+            form.save()
+            return redirect('profile_page')
+    
+    return render(request, 'accounts/update_user.html', context)
