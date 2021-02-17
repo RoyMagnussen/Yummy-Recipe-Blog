@@ -12,12 +12,14 @@
                     </li>
                     <li class="nav-item mx-3 dropdown">
                         <a class="nav-link" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <!-- TODO: Add if statement to check if user has a profile picture, if yes, display profile picture, if not, display icon -->
-                            <i class="bi bi-person icon-lg"></i>
+                            {% if user.profile_picture %}
+                                <img src="{{ user.profile_picture.url }}" alt="{{ user.username }}'s Profile Picture" class="rounded-circle navigation-profile-picture">
+                            {% else %}
+                                <i class="bi bi-person icon-lg"></i>
+                            {% endif %}
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="accountDropdown">
-                            <!-- TODO: Add url function for profile page -->
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'profile_page' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'logout_page' %}" class="dropdown-item">Logout</a>
                         </div>
                     </li>

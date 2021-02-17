@@ -7,10 +7,10 @@
                     <p class="logo-font">{{ recipe.name }}</p>
                 </div>
                 <div class="col-2">
-                    {% if recipe.author.profile.image %}
-                        <img src="{{ recipe.author.profile.image.url }}" alt="{{ recipe.author.username }}'s Profile Picture" class="rounded-circle recipe-card-profile-picture">
+                    {% if recipe.author.profile_picture %}
+                        <img src="{{ recipe.author.profile_picture.url }}" alt="{{ recipe.author.username }}'s Profile Picture" class="rounded-circle recipe-card-profile-picture">
                     {% else %}
-                        <i class="bi bi-person"></i>
+                        <i class="bi bi-person icon-md"></i>
                     {% endif %}
                 </div>
                 <div class="col-10">

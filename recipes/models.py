@@ -1,6 +1,6 @@
+from accounts.models import Account
 from django.db.models import Model
 from django.utils import timezone
-from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, DateTimeField, IntegerField, TextField
 from django.db.models.fields.files import ImageField
@@ -43,8 +43,16 @@ class Recipe(Model):
     cook_time = IntegerField(null=False, blank=False)
     total_time = IntegerField(null=False, blank=False)
     likes = IntegerField(default=0)
-    author = ForeignKey(User, on_delete=CASCADE)
+    author = ForeignKey(Account, on_delete=CASCADE)
     date_created = DateTimeField(default=timezone.now)
 
     def __str__(self) -> str:
         return self.name
+
+
+class LikedRecipe(Model):
+    recipe = ForeignKey(Recipe, on_delete=CASCADE)
+    liked_by = ForeignKey(Account, on_delete=CASCADE)
+    
+    def __str__(self) -> str:
+        return f"{self.liked_by.username} likes {self.recipe.name}"

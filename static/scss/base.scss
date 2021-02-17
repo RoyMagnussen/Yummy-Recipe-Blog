@@ -38,6 +38,13 @@ body {
     font-size: 2rem;
 }
 
+.navigation-profile-picture {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+
 // Components
 .form-btn { font-size: 2rem; }
 
@@ -45,6 +52,6 @@ body {
 .form-btn:active,
 .form-btn:focus {
     background-color: #333;
-    color: white;
+    color: white !important;
     transition: all ease-in 0.2s;
 }

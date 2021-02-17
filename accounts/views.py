@@ -3,13 +3,15 @@ from django.shortcuts import redirect, render
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.urls import reverse
-from .forms import AccountChangePasswordForm, AccountSignUpForm, AccountLoginForm, ResetPasswordForm
+from .forms import AccountChangePasswordForm, AccountSignUpForm, AccountLoginForm, ResetPasswordForm, AccountUpdateForm
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.contrib.sites.shortcuts import get_current_site
 import stripe
+from django.contrib.auth.decorators import login_required
+from .models import Account
 
 # Create your views here.
 
@@ -30,17 +32,20 @@ def login_page(request) -> render:
         'form': form
     }
 
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            return redirect('login_page')
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                return redirect('login_page')
 
-    return render(request, 'accounts/login.html', context)
+        return render(request, 'accounts/login.html', context)
 
 
 def sign_up(request) -> render:
@@ -224,7 +229,7 @@ def reset_password_change_password(request, uidb64, token):
     }
 
     if request.method == 'POST':
-        
+
         user_id = force_text(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=user_id)
         form = AccountChangePasswordForm(user, request.POST)
@@ -258,3 +263,24 @@ def logout_user(request) -> redirect:
     """
     logout(request)
     return redirect('login_page')
+
+
+@login_required(login_url='/')
+def update_user_page(request):
+    user = Account.objects.get(username=request.user.username)
+    form = AccountUpdateForm(instance=user)
+    form.is_multipart()
+    context = {
+        'title': 'Update User',
+        'user': user,
+        'form': form,
+    }
+    
+    if request.method == 'POST':
+        form = AccountUpdateForm(request.POST, request.FILES, instance=user)
+        form.is_multipart()
+        if form.is_valid():
+            form.save()
+            return redirect('profile_page')
+    
+    return render(request, 'accounts/update_user.html', context)

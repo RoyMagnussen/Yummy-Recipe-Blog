@@ -2,6 +2,22 @@ body {
     background: #dbd8d6;
 }
 
+.pink-heart {
+    color: #ff748c !important;
+}
+
+.icon-xl {
+    font-size: 4rem;
+}
+
+.icon-md {
+    font-size: 1.5rem;
+}
+
+.profile-picture-icon {
+    font-size: 250px;
+}
+
 .recipe-card {
     height: auto;
 }
@@ -11,4 +27,24 @@ body {
     width: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.recipe-card-profile-picture {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-page-profile-picture {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-action-btn {
+    background: white;
+    width: 100%;
+    height: 250px;
 }

@@ -1,6 +1,7 @@
+from accounts.models import Account
 from django.contrib.auth.forms import SetPasswordForm, UserCreationForm, AuthenticationForm, PasswordResetForm
-from django.contrib.auth.models import User
 from django.forms.fields import EmailField
+from django.forms import ModelForm
 
 
 class AccountSignUpForm(UserCreationForm):
@@ -13,7 +14,7 @@ class AccountSignUpForm(UserCreationForm):
     email = EmailField(required=True, label='Email')
 
     class Meta:
-        model = User
+        model = Account
         fields = ['username', 'email', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
@@ -70,3 +71,19 @@ class AccountChangePasswordForm(SetPasswordForm):
 
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control form-control-lg border-0'
+            
+            
+class AccountUpdateForm(ModelForm):
+    class Meta:
+        model = Account
+        fields = ['profile_picture', 'first_name', 'last_name', 'username','email', 'password']
+        
+    def __init__(self, *args, **kwargs):
+        super(AccountUpdateForm, self).__init__(*args, **kwargs)
+        
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'form-control form-control-lg border-0'
+            
+            
+    def save(self):
+        return super(AccountUpdateForm, self).save()
