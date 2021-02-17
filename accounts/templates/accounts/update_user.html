@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<div class="container-fluid px-5 mt-5 text-uppercase">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12 col-md-6">
+                {% if user.profile_picture %}
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="{{ user.profile_picture.url }}" alt="{{ user.username }}'s Profile Picture" class="img-fluid rounded-circle profile-page-profile-picture">
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label for="#id_profile_picture" class="form-label">{{ form.profile_picture.label }}</label>
+                            {{ form.profile_picture }}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row">
+                        <div class="col-12">
+                            <i class="bi bi-person profile-picture-icon"></i>
+                        </div>
+                        <div class="col-12">
+                            <label for="#id_profile_picture" class="form-label">{{ form.profile_picture.label }}</label>
+                            {{ form.profile_picture }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="id_first_name" class="form-label">{{ form.first_name.label }}</label>
+                        <div class="input-group rounded border-dark-grey">
+                            {{ form.first_name }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <label for="id_last_name" class="form-label">{{ form.last_name.label }}</label>
+                        <div class="input-group rounded border-dark-grey">
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="id_username" class="form-label">{{ form.username.label }}</label>
+                        <div class="input-group rounded border-dark-grey">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="id_email" class="form-label">{{ form.email.label }}</label>
+                        <div class="input-group rounded border-dark-grey">
+                            {{ form.email }}
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="id_password" class="form-label">{{ form.password.label }}</label>
+                        <div class="input-group rounded border-dark-grey">
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <a href="{% url 'profile_page' %}" class="btn btn-lg borer border-danger logo-font form-btn w-100">Cancel</a>
+                    </div>
+                    <div class="col-12 col-md-6 mb-3">
+                        <button type="submit" class="btn btn-lg logo-font form-btn w-100 border-dark-grey text-uppercase">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
