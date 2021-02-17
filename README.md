@@ -16,6 +16,8 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [4. Login Page](#4-login-page)
       - [5. Reset Password](#5-reset-password)
       - [6. Home Page](#6-home-page)
+      - [7. Profile Page](#7-profile-page)
+      - [8. Profile Update Page](#8-profile-update-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -35,8 +37,8 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         1         | Potential User |         Easily sign up for an account          |                       Have a personal account and be able to view my profile                        |    ✔     |
 |         2         | Potential User | Receive an email confirmation after signing up |                            Verify that my account sign up was successful                            |    ✔     |
 |         3         |   Site User    |             Easily login or logout             |                               Access my personal account information                                |    ✔     |
-|         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |   ✔      |
-|         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ❌     |
+|         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |    ✔     |
+|         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ✔     |
 |         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ❌     |
 |         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ❌     |
 |         8         |   Site User    |             Remove a liked recipe              |                                Remove it from the liked recipes list                                |    ❌     |
@@ -97,6 +99,15 @@ The `reset password` page allows users to change their password by having an ema
 #### 6. Home Page
 
 The `home` page allows users to view all of the recipes on the site. It currently only shows the recipes in order from oldest to newest. (Please view the features left to implement section).
+
+
+#### 7. Profile Page
+
+The `profile` page allows the user to view their information such as their name, username and profile picture by getting the user to navigate to the `profile` page by selecting the dropdown menu for the user ans clicking of the my profile link in the dropdown.
+
+#### 8. Profile Update Page
+
+The `profile update` page allows the user to update their information such as their profile picture, name, username, email and password by hetting the user to click on the edit profile button in the `profile` page.
 
 ### Features Left to Implement
 
