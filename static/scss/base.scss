@@ -52,6 +52,6 @@ body {
 .form-btn:active,
 .form-btn:focus {
     background-color: #333;
-    color: white;
+    color: white !important;
     transition: all ease-in 0.2s;
 }
