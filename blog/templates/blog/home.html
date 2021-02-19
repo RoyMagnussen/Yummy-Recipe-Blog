@@ -5,10 +5,10 @@
 {% endblock extra_css %}
 {% block content %}
 <div class="container text-uppercase mt-3">
-    {% for recipe in recipes %}
-        <div class="row">
+    <div class="row">
+        {% for recipe in recipes %}
             {% include 'blog/includes/recipe_card.html' %}
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}  
