@@ -1,6 +1,11 @@
+{% load static %}
 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
     <div class="card shadow recipe-card border-0">
-        <img src="{{ recipe.image.url }}" class="card-img-top recipe-card-image" alt="{{ recipe.name }}">
+        {% if recipe.image%}
+            <img src="{{ recipe.image.url }}" class="card-img-top recipe-card-image" alt="{{ recipe.name }}">
+        {% else %}
+            <img src="/media/recipe_images/default.jpg" alt="Default Image">
+        {% endif %}
         <div class="card-body">
             <div class="row">
                 <div class="col-12">
@@ -29,7 +34,7 @@
                     </p>
                     <p>
                         <i class="bi bi-tag-fill"></i>
-                        <span>{{ recipe.category }}</span>
+                        <span>{{ recipe.category.all|join:', '}}</span>
                     </p>
                     {% if recipe.author.username == user.username %}
                         <a class="disabled text-decoration-none">
