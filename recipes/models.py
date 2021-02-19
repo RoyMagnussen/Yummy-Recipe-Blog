@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, DateTimeField, IntegerField, TextField
 from django.db.models.fields.files import ImageField
-from django.db.models.fields.related import ForeignKey
+from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 # Create your models here.
 
@@ -37,7 +37,7 @@ class Recipe(Model):
     image = ImageField(upload_to='recipe_images')
     ingredients = TextField(null=False, blank=False)
     steps = TextField(null=False, blank=False)
-    category = ForeignKey(Category, on_delete=CASCADE)
+    category = ManyToManyField(Category)
     servings = IntegerField(null=False, blank=False)
     prep_time = IntegerField(null=False, blank=False)
     cook_time = IntegerField(null=False, blank=False)
