@@ -18,6 +18,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [6. Home Page](#6-home-page)
       - [7. Profile Page](#7-profile-page)
       - [8. Profile Update Page](#8-profile-update-page)
+      - [9. Recipe Creation Page](#9-recipe-creation-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -39,7 +40,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         3         |   Site User    |             Easily login or logout             |                               Access my personal account information                                |    ✔     |
 |         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |    ✔     |
 |         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ✔     |
-|         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ❌     |
+|         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ✔     |
 |         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ❌     |
 |         8         |   Site User    |             Remove a liked recipe              |                                Remove it from the liked recipes list                                |    ❌     |
 |         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ✔     |
@@ -47,7 +48,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |        11         |   Site User    |    Search for a recipe by name or category     |                               Find a specific recipe I'd like to use                                |    ❌     |
 |        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ❌     |
 |        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ❌     |
-|        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ❌     |
+|        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ✔     |
 |        15         |   Site User    |                 Edit a recipe                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture |    ❌     |
 |        16         |   Site User    |                Delete a recipe                 |                                       Remove it from the site                                       |    ❌     |
 |        17         |   Site User    |                 Like a recipe                  |       Support the author and save the recipe to my liked recipes list so I can find it easier       |    ❌     |
@@ -84,7 +85,7 @@ This is to prevent the user from purchasing a membership without creating an acc
 
 The `sign up complete` page notifies the user that their account creation has been successful and that an email has been sent to the their email to confirm that it has.
 
-The page also has a button to the `login` page where they are able to log in after they recieve the email.
+The page also has a button to the `login` page where they are able to log in after they receive the email.
 
 #### 4. Login Page
 
@@ -107,7 +108,11 @@ The `profile` page allows the user to view their information such as their name,
 
 #### 8. Profile Update Page
 
-The `profile update` page allows the user to update their information such as their profile picture, name, username, email and password by hetting the user to click on the edit profile button in the `profile` page.
+The `profile update` page allows the user to update their information such as their profile picture, name, username, email and password by getting the user to click on the edit profile button in the `profile` page.
+
+#### 9. Recipe Creation Page
+
+The `recipe creation` page allows the user to create a recipe and share it with the other users of the site by providing the required information for the recipe to be created such as the name, servings, prep time, cook time, categories, ingredients and steps.
 
 ### Features Left to Implement
 
