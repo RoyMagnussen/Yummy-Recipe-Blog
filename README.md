@@ -19,6 +19,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [7. Profile Page](#7-profile-page)
       - [8. Profile Update Page](#8-profile-update-page)
       - [9. Recipe Creation Page](#9-recipe-creation-page)
+      - [10. Personal Recipes Page](#10-personal-recipes-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -113,6 +114,10 @@ The `profile update` page allows the user to update their information such as th
 #### 9. Recipe Creation Page
 
 The `recipe creation` page allows the user to create a recipe and share it with the other users of the site by providing the required information for the recipe to be created such as the name, servings, prep time, cook time, categories, ingredients and steps.
+
+#### 10. Personal Recipes Page
+
+The `personal recipes` page allows the user to view all of their personal recipes that they have created. It also allows the user to edit the recipe or delete the recipe.
 
 ### Features Left to Implement
 
