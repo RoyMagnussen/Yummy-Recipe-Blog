@@ -46,7 +46,10 @@ body {
 }
 
 // Components
-.form-btn { font-size: 2rem; }
+.form-btn { 
+    font-size: 2rem;
+    background-color: white;
+}
 
 .form-btn:hover,
 .form-btn:active,

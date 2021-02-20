@@ -20,6 +20,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [8. Profile Update Page](#8-profile-update-page)
       - [9. Recipe Creation Page](#9-recipe-creation-page)
       - [10. Personal Recipes Page](#10-personal-recipes-page)
+      - [11. Liked Recipes Page](#11-liked-recipes-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -42,7 +43,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         4         |   Site User    | Easily recover my password in case I forget it |                                    Recover access to my account                                     |    ✔     |
 |         5         |   Site User    |        Have a personalised user profile        |    View and edit my personal details such as name, username, profile picture, email and password    |    ✔     |
 |         6         |   Site User    |                View my profile                 |          Look at all of the recipes that I have created, my liked recipes and my comments           |    ✔     |
-|         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ❌     |
+|         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ✔     |
 |         8         |   Site User    |             Remove a liked recipe              |                                Remove it from the liked recipes list                                |    ❌     |
 |         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ✔     |
 |        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ❌     |
@@ -118,6 +119,10 @@ The `recipe creation` page allows the user to create a recipe and share it with 
 #### 10. Personal Recipes Page
 
 The `personal recipes` page allows the user to view all of their personal recipes that they have created. It also allows the user to edit the recipe or delete the recipe.
+
+#### 11. Liked Recipes Page
+
+The `liked recipes` page allows the user to view all of their liked recipes in order for them to quickly find the recipe that they are looking for in order to use it.
 
 ### Features Left to Implement
 

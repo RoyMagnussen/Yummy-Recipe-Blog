@@ -1,0 +1,50 @@
+
+{% load static %}
+<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+    <div class="card shadow recipe-card border-0">
+        {% if recipe.image%}
+            <img src="{{ recipe.image.url }}" class="card-img-top recipe-card-image" alt="{{ recipe.name }}">
+        {% else %}
+            <img src="/media/recipe_images/default.jpg" alt="Default Image">
+        {% endif %}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <p class="logo-font">{{ recipe.name }}</p>
+                </div>
+                <div class="col-2">
+                    {% if recipe.author.profile_picture %}
+                        <img src="{{ recipe.author.profile_picture.url }}" alt="{{ recipe.author.username }}'s Profile Picture" class="rounded-circle recipe-card-profile-picture">
+                    {% else %}
+                        <i class="bi bi-person icon-md"></i>
+                    {% endif %}
+                </div>
+                <div class="col-10">
+                    <small>
+                        <!-- TODO: Add url function for users profile page -->
+                        <a href="#" class="text-decoration-none">{{ recipe.author.username }}</a>
+                    </small>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <p>Serves: {{ recipe.servings }}</p>
+                    <p>
+                        <i class="bi bi-clock"></i>
+                        <span>{{ recipe.total_time }} Minutes</span>
+                    </p>
+                    <p>
+                        <i class="bi bi-tag-fill"></i>
+                        <span>{{ recipe.category.all|join:', '}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-12 mb-2">
+                <!-- TODO: Add url function for delete recipe page -->
+                <a href="#" class="btn btn-lg form-btn border border-danger w-100 logo-font">Del</a>
+            </div>
+        </div>
+    </div>
+</div>
