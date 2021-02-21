@@ -43,7 +43,7 @@
         <div class="row p-3">
             <div class="col-12 mb-2">
                 <!-- TODO: Add url function for delete recipe page -->
-                <a href="#" class="btn btn-lg form-btn border border-danger w-100 logo-font">Del</a>
+                <a href="{% url 'remove_liked_recipe' recipe_id=recipe.id %}" class="btn btn-lg form-btn border border-danger w-100 logo-font">Del</a>
             </div>
         </div>
     </div>
