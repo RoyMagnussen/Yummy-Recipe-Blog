@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from recipes.models import LikedRecipe, Recipe
 from accounts.models import Account
@@ -72,3 +73,22 @@ def liked_recipes_page(request) ->render:
     }
     
     return render(request, 'blog/liked_recipes.html', context)
+
+
+@login_required(login_url='/')
+def remove_liked_recipe(request, recipe_id) -> redirect:
+    """
+    Finds the recipe from the liked recipes table where the recipe Id matches the provided Id and the `liked_by` field matches the currently logged in user.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object. 
+        recipe_id (int): The Id of the recipe that needs to be removed.
+
+    Returns:
+        redirect: Redirects the user to the provided url name.
+    """
+    user = Account.objects.get(username=request.user.username)
+    recipe = Recipe.objects.get(id=recipe_id)
+    LikedRecipe.objects.get(recipe=recipe, liked_by=user).delete()
+    messages.success(request, 'The recipe has successfully been removed.')
+    return redirect('liked_recipes')
