@@ -6,6 +6,14 @@
 {% block content %}
 <div class="container text-uppercase mt-3">
     <div class="row">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} ">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% else %}
+        {% endif %}
         {% if recipes|length == 0 %}
         <div class="col-12 m-auto text-center">
             <h1 class="display-4 text-center logo-font">You have no liked recipes.</h1>
