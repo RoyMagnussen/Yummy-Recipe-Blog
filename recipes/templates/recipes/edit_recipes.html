@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<div class="container text-uppercase mt-5">
+    <form action="" method="post" class="form shadow rounded-20 p-3 p-md-5 bg-white">
+        <h1 class="text-center display-4 logo-font mb-5">Edit a recipe</h1>
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_name" class="form-label">{{ form.name.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_servings" class="form-label">{{ form.servings.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.servings }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_prep_time" class="form-label">{{ form.prep_time.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.prep_time }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_cook_time" class="form-label">{{ form.cook_time.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.cook_time }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_categories" class="form-label">{{ form.categories.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.categories }}
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+                <label for="id_image" class="form-label">{{ form.image.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.image }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <h1 class="display-4 logo-font mb-5">Ingredients</h1>
+                <label for="id_ingredients" class="form-label">{{ form.ingredients.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.ingredients }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <h1 class="display-4 logo-font mb-5">Steps</h1>
+                <label for="id_steps" class="form-label">{{ form.steps.label }}</label>
+                <div class="input-group rounded border-dark-grey">
+                    {{ form.steps }}
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12 col-md-6">
+                <a href="{% url 'home' %}" class="btn btn-lg form-btn border border-danger w-100 logo-font">Cancel</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <button type="submit" class="btn btn-lg form-btn border-dark-grey w-100 logo-font text-uppercase">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
