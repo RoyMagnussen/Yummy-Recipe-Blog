@@ -23,6 +23,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [11. Liked Recipes Page](#11-liked-recipes-page)
       - [12. Remove Liked Recipes](#12-remove-liked-recipes)
       - [13. Delete Recipe](#13-delete-recipe)
+      - [14. Like A Recipe](#14-like-a-recipe)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -55,7 +56,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ✔     |
 |        15         |   Site User    |                 Edit a recipe                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture |    ❌     |
 |        16         |   Site User    |                Delete a recipe                 |                                       Remove it from the site                                       |    ✔     |
-|        17         |   Site User    |                 Like a recipe                  |       Support the author and save the recipe to my liked recipes list so I can find it easier       |    ❌     |
+|        17         |   Site User    |                 Like a recipe                  |       Support the author and save the recipe to my liked recipes list so I can find it easier       |    ✔     |
 
 ### Wireframes
 
@@ -133,6 +134,10 @@ The `remove liked recipe` function allows the user to easily remove a recipe fro
 #### 13. Delete Recipe
 
 The `delete recipe` function allows the user to easily delete a recipe from the users created recipes just by clicking the delete button on the recipe card on the `my recipes` page of the user profile.
+
+#### 14. Like A Recipe
+
+The `like recipe` function allows the user to quickly add the recipe into their liked recipes on their profile page.
 
 ### Features Left to Implement
 

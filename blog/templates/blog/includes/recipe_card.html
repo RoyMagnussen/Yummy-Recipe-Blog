@@ -49,8 +49,7 @@
                                 <span>{{ recipe.likes }}</span>
                             </a>
                         {% else %}
-                            <!-- TODO: Add url function to like recipe -->
-                            <a href="#" class="text-decoration-none">
+                            <a href="{% url 'like_recipe' recipe_id=recipe.id %}" class="text-decoration-none">
                                 <i class="bi bi-heart"></i>
                                 <span>{{ recipe.likes }}</span>
                             </a>

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
-from .models import Recipe, Category
+from .models import LikedRecipe, Recipe, Category
 from .forms import RecipeCreationForm
 from accounts.models import Account
 
@@ -53,3 +53,22 @@ def create_recipe(request) -> render:
     }
 
     return render(request, 'recipes/create_recipe.html', context)
+
+
+@login_required(login_url='/')
+def like_recipe(request, recipe_id) -> redirect:
+    """
+    Likes the current recipe.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+        recipe_id (int): The Id from the current recipe.
+
+    Returns:
+        redirect: Rediects the user to the provided url.
+    """
+    recipe = Recipe.objects.get(id=recipe_id)
+    recipe.likes += 1
+    user = Account.objects.get(username=request.user.username)
+    LikedRecipe.objects.create(recipe=recipe, liked_by=user)
+    return redirect('home')
