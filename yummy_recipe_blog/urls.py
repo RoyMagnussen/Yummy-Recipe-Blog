@@ -19,11 +19,13 @@ from django.conf import settings
 from django.urls import path, include
 from blog import views as blog_views
 from accounts import views as account_views
+from recipes import views as recipe_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
     path('home/', include('blog.urls')),
+    path('like_recipe/<recipe_id>/', recipe_views.like_recipe, name='like_recipe'),
     path('profile/', blog_views.profile_page, name='profile_page'),
     path('profile/edit/', account_views.update_user_page, name='update_user'),
     path('profile/my_recipes/', blog_views.personal_recipes, name='personal_recipes'),
