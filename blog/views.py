@@ -92,3 +92,21 @@ def remove_liked_recipe(request, recipe_id) -> redirect:
     LikedRecipe.objects.get(recipe=recipe, liked_by=user).delete()
     messages.success(request, 'The recipe has successfully been removed.')
     return redirect('liked_recipes')
+
+
+@login_required(login_url='/')
+def delete_recipe(request, recipe_id) -> redirect:
+    """
+    Finds the recipe from the personal recipes where the recipe Id matches the provided Id.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+        recipe_id (int): The Id fo the recipe that needs to be removed.
+
+    Returns:
+        redirect: Redirects the user to the provided url name.
+    """
+    user = Account.objects.get(username=request.user.username)
+    Recipe.objects.get(id=recipe_id, author=user).delete()
+    messages.success(request, 'The recipe has successfully been removed.')
+    return redirect('personal_recipes')

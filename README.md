@@ -22,6 +22,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [10. Personal Recipes Page](#10-personal-recipes-page)
       - [11. Liked Recipes Page](#11-liked-recipes-page)
       - [12. Remove Liked Recipes](#12-remove-liked-recipes)
+      - [13. Delete Recipe](#13-delete-recipe)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -53,7 +54,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ❌     |
 |        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ✔     |
 |        15         |   Site User    |                 Edit a recipe                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture |    ❌     |
-|        16         |   Site User    |                Delete a recipe                 |                                       Remove it from the site                                       |    ❌     |
+|        16         |   Site User    |                Delete a recipe                 |                                       Remove it from the site                                       |    ✔     |
 |        17         |   Site User    |                 Like a recipe                  |       Support the author and save the recipe to my liked recipes list so I can find it easier       |    ❌     |
 
 ### Wireframes
@@ -128,6 +129,10 @@ The `liked recipes` page allows the user to view all of their liked recipes in o
 #### 12. Remove Liked Recipes
 
 The `remove liked recipe` function allows the user to easily remove a recipe from the users liked recipes just by clicking the delete button on the recipe card.
+
+#### 13. Delete Recipe
+
+The `delete recipe` function allows the user to easily delete a recipe from the users created recipes just by clicking the delete button on the recipe card on the `my recipes` page of the user profile.
 
 ### Features Left to Implement
 
