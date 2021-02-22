@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/', blog_views.profile_page, name='profile_page'),
     path('profile/edit/', account_views.update_user_page, name='update_user'),
     path('profile/my_recipes/', blog_views.personal_recipes, name='personal_recipes'),
+    path('profile/my_recipes/<recipe_id>/edit/', recipe_views.edit_recipe, name='edit_recipe'),
     path('profile/my_recipes/<recipe_id>/delete/', blog_views.delete_recipe, name='delete_recipe'),
     path('profile/liked_recipes/', blog_views.liked_recipes_page, name='liked_recipes'),
     path('profile/liked_recipes/<recipe_id>/remove/', blog_views.remove_liked_recipe, name='remove_liked_recipe'),
