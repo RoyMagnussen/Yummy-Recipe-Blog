@@ -56,6 +56,28 @@ def create_recipe(request) -> render:
 
 
 @login_required(login_url='/')
+def edit_recipe(request, recipe_id):
+    user = Account.objects.get(username=request.user.username)
+    recipe = Recipe.objects.get(id=recipe_id)
+    form = RecipeCreationForm(instance=recipe)
+    form.is_multipart()
+    context = {
+        'title': 'Recipe',
+        'user': user,
+        'form': form,
+    }
+    
+    if request.method == 'POST':
+        form = RecipeCreationForm(request.POST, request.FILES, instance=recipe)
+        form.is_multipart()
+        if form.is_valid():
+            form.save()
+            return redirect('personal_recipes')
+        
+    return render(request, 'recipes/edit_recipes.html', context)
+
+
+@login_required(login_url='/')
 def like_recipe(request, recipe_id) -> redirect:
     """
     Likes the current recipe.
