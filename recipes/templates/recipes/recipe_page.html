@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<div class="container text-uppercase">
+    <div class="row mt-5">
+        <div class="col-12 col-md-6">
+            {% if recipe.image %}
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="img-fluid recipe-page-recipe-image">
+            {% else %}
+                <img src="/media/recipe_images/default.jpg" alt="Default Recipe Image" class="img-fluid recipe-page-recipe-image">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6 mt-3 mt-md-0">
+            <h1 class="display-4 logo-font">{{ recipe.name }}</h1>
+            <div class="d-block mb-2">
+                {% if recipe.author.profile_picture %}
+                    <img src="{{ recipe.author.profile_picture.url }}" alt="{{ recipe.author.username }}'s Profile Picture" class="img-fluid rounded-circle recipe-page-profile-picture">
+                    <span class="ms-3">{{ recipe.author.username }}</span>
+                {% else %}
+                    <i class="bi bi-person icon-lg"></i>
+                    <span class="ms-3">{{ recipe.author.username }}</span>
+                {% endif %}
+            </div>
+            <p class="lead">Serves: {{ recipe.servings }}</p>
+            <p class="lead">
+                <i class="bi bi-clock icon-lg"></i>
+                Prep Time: {{ recipe.prep_time }} minutes
+            </p>
+            <p class="lead">
+                <i class="bi bi-clock icon-lg"></i>
+                Cook Time: {{ recipe.cook_time }} minutes
+            </p>
+            <p class="lead">
+                <i class="bi bi-tag-fill icon-lg"></i>
+                <span>{{ recipe.category.all|join:', '}}</span>
+            </p>
+            <p class="lead">
+                <i class="bi bi-heart icon-lg"></i>
+                <span>{{ recipe.likes }}</span>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-md-6">
+            <h1 class="logo-font">Ingredients</h1>
+            <p class="lead">{{ recipe.ingredients }}</p>
+        </div>
+        <div class="col-12 col-md-6">
+            <h1 class="logo-font">Steps</h1>
+            <p class="lead">{{ recipe.steps }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

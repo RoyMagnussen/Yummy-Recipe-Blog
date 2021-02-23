@@ -25,6 +25,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [13. Delete Recipe](#13-delete-recipe)
       - [14. Like A Recipe](#14-like-a-recipe)
       - [15. Edit A Recipe](#15-edit-a-recipe)
+      - [16. Recipe Details](#16-recipe-details)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -52,7 +53,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ✔     |
 |        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ❌     |
 |        11         |   Site User    |    Search for a recipe by name or category     |                               Find a specific recipe I'd like to use                                |    ❌     |
-|        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ❌     |
+|        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ✔     |
 |        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ❌     |
 |        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ✔     |
 |        15         |   Site User    |                 Edit a recipe                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture |    ✔     |
@@ -143,6 +144,10 @@ The `like recipe` function allows the user to quickly add the recipe into their 
 #### 15. Edit A Recipe
 
 The `edit recipe` page allows the user to add, remove or update the details of the recipe by getting them to update the form with the pre-populated information from the recipe.
+
+#### 16. Recipe Details
+
+The `recipe` page allows the user to view the details of a recipe such as the image, name, author, servings, prep time, cook time, categories, likes, ingredients and steps.
 ### Features Left to Implement
 
 #### Recipe Sorter

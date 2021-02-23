@@ -94,3 +94,25 @@ def like_recipe(request, recipe_id) -> redirect:
     user = Account.objects.get(username=request.user.username)
     LikedRecipe.objects.create(recipe=recipe, liked_by=user)
     return redirect('home')
+
+
+@login_required(login_url='/')
+def recipe_page(request, recipe_id) -> render:
+    """
+    Renders the recipe page.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+        recipe_id (int): The Id from the current recipe.
+
+    Returns:
+        render: An HttpResponse whose content is filled by the provided template and context.
+    """
+    recipe = Recipe.objects.get(id=recipe_id)
+    user = Account.objects.get(username=request.user.username)
+    context = {
+        'title': recipe.name,
+        'user': user,
+        'recipe': recipe
+    }
+    return render(request, 'recipes/recipe_page.html', context)
