@@ -8,8 +8,21 @@ from accounts.models import Account
 
 
 @login_required(login_url='/')
-def home(request):
-    recipes = Recipe.objects.all()
+def home(request) -> render:
+    """
+    Renders the home page.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object
+
+    Returns:
+        render: A HttpResponse whose content is filled by the provided template and context.
+    """
+    if 'q' in request.GET:
+        query = request.GET.get('q')
+        recipes = Recipe.objects.all().filter(name=query)
+    else:
+        recipes = Recipe.objects.all()
     user = Account.objects.get(username=request.user.username)
 
     context = {
@@ -23,6 +36,15 @@ def home(request):
 
 @login_required(login_url='/')
 def profile_page(request) -> render:
+    """
+    Renders the profile page.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object
+
+    Returns:
+        render: A HttpResponse whose content is filled by the provided template and context.
+    """
     user = Account.objects.get(username=request.user.username)
     context = {
         'title': 'Profile',
@@ -33,7 +55,7 @@ def profile_page(request) -> render:
 
 
 @login_required(login_url='/')
-def personal_recipes(request) ->render:
+def personal_recipes(request) -> render:
     """
     Renders the personal recipes page.
 
@@ -50,11 +72,12 @@ def personal_recipes(request) ->render:
         'user': user,
         'recipes': recipes
     }
-    
+
     return render(request, 'blog/personal_recipes.html', context)
 
+
 @login_required(login_url='/')
-def liked_recipes_page(request) ->render:
+def liked_recipes_page(request) -> render:
     """
     Renders the liked recipes page.
 
@@ -71,7 +94,7 @@ def liked_recipes_page(request) ->render:
         'user': user,
         'recipes': recipes,
     }
-    
+
     return render(request, 'blog/liked_recipes.html', context)
 
 
