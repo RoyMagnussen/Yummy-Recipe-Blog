@@ -23,7 +23,7 @@
                 <div class="col-10">
                     <small>
                         <!-- TODO: Add url function for users profile page -->
-                        <a href="#" class="text-decoration-none">{{ recipe.author.username }}</a>
+                        <a href="{% url 'user_profile' username=recipe.author.username %}" class="text-decoration-none">{{ recipe.author.username }}</a>
                     </small>
                 </div>
             </div>
