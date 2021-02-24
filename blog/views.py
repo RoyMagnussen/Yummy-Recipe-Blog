@@ -133,3 +133,28 @@ def delete_recipe(request, recipe_id) -> redirect:
     Recipe.objects.get(id=recipe_id, author=user).delete()
     messages.success(request, 'The recipe has successfully been removed.')
     return redirect('personal_recipes')
+
+
+@login_required(login_url='/')
+def user_profile(request, username) -> render:
+    """
+    Renders the user page.
+
+    Args:
+        request (HttpRequest): A HttpRequest class object.
+        user_id (string): The username of the target user.
+
+    Returns:
+        render: A HttpResponse whose content is filled by the provided template and content.
+    """
+    target_user = Account.objects.get(username=username)
+    user = Account.objects.get(username=request.user.username)
+    recipes = Recipe.objects.all().filter(author=target_user)
+    context = {
+        'title': f"{target_user['username']}'s Profile",
+        'user': user,
+        'target_user': target_user,
+        'recipes': recipes,
+    }
+    
+    return render(request, 'blog/user_page.html', context)
