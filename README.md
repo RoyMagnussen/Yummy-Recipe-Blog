@@ -27,6 +27,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [15. Edit A Recipe](#15-edit-a-recipe)
       - [16. Recipe Details](#16-recipe-details)
       - [17. Search Feature](#17-search-feature)
+      - [18. User Page](#18-user-page)
     - [Features Left to Implement](#features-left-to-implement)
       - [Recipe Sorter](#recipe-sorter)
   - [Technologies Used](#technologies-used)
@@ -55,7 +56,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ❌     |
 |        11         |   Site User    |    Search for a recipe by name or category     |                               Find a specific recipe I'd like to use                                |    ✔     |
 |        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ✔     |
-|        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ❌     |
+|        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ✔     |
 |        14         |   Site User    |                Create a recipe                 |                                      Share it with other users                                      |    ✔     |
 |        15         |   Site User    |                 Edit a recipe                  | Change the details of the recipe such as the name, the servings, ingredients, steps and the picture |    ✔     |
 |        16         |   Site User    |                Delete a recipe                 |                                       Remove it from the site                                       |    ✔     |
@@ -153,6 +154,10 @@ The `recipe` page allows the user to view the details of a recipe such as the im
 #### 17. Search Feature
 
 The `search` feature allows the user to search for a specific recipe(s) and displays them on the home page.
+
+#### 18. User Page
+
+The `user page` allows the user to view another users profile and view all of their recipes that they have created.
 
 ### Features Left to Implement
 

@@ -34,4 +34,5 @@ urlpatterns = [
     path('profile/liked_recipes/', blog_views.liked_recipes_page, name='liked_recipes'),
     path('profile/liked_recipes/<recipe_id>/remove/', blog_views.remove_liked_recipe, name='remove_liked_recipe'),
     path('recipes/', include('recipes.urls')),
+    path('users/<username>/', blog_views.user_profile, name='user_profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<div class="container-fluid px-5 mt-5 text-uppercase">
+    <div class="row">
+        <div class="col-12">
+            <div class="profile-info">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        {% if user.profile_picture %}
+                            <img src="{{ user.profile_picture.url }}" alt="{{ user.username }}'s Profile Picture" class="img-fluid d-flex mx-auto rounded-circle profile-page-profile-picture">
+                        {% else %}
+                            <i class="bi bi-person profile-picture-icon"></i>
+                        {% endif %}
+                    </div>
+                    <div class="col-12 col-md-6 align-middle d-flex mt-3 mt-md-0">
+                        <div class="d-block my-auto mx-auto mx-md-0">
+                            {% if user.first_name or user.last_name %}
+                            <h1 class="display-4 logo-font">{{ user.first_name }} {{ user.last_name}}</h1>
+                            {% endif %}
+                            <p class="lead">{{ user.username }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-5">
+        {% for recipe in recipes %}
+            {% include 'blog/includes/recipe_card.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
