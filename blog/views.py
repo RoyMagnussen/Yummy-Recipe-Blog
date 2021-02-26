@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from recipes.models import LikedRecipe, Recipe
 from accounts.models import Account
+from django.db.models.functions import Lower
 
 # Create your views here.
 
@@ -18,6 +19,31 @@ def home(request) -> render:
     Returns:
         render: A HttpResponse whose content is filled by the provided template and context.
     """
+
+    recipes = Recipe.objects.all()
+    
+    sort = None
+    direction = None
+    current_sorting = None
+
+    if 'sort' in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == 'name':
+            sortkey = 'lower_name'
+            recipes = recipes.annotate(lower_name=Lower('name'))
+        if sortkey == 'time':
+            sortkey = 'total_time'
+        if sortkey == 'category':
+            sortkey = 'category__name'
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        recipes = recipes.order_by(sortkey)
+        
+    current_sorting = f'{sort}_{direction}'
+
     if 'q' in request.GET:
         query = request.GET.get('q')
         recipes = Recipe.objects.all().filter(name=query)
@@ -29,6 +55,7 @@ def home(request) -> render:
         'title': 'Home',
         'recipes': recipes,
         'user': user,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'blog/home.html', context)
@@ -156,5 +183,5 @@ def user_profile(request, username) -> render:
         'target_user': target_user,
         'recipes': recipes,
     }
-    
+
     return render(request, 'blog/user_page.html', context)
