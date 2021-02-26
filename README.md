@@ -28,8 +28,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [16. Recipe Details](#16-recipe-details)
       - [17. Search Feature](#17-search-feature)
       - [18. User Page](#18-user-page)
-    - [Features Left to Implement](#features-left-to-implement)
-      - [Recipe Sorter](#recipe-sorter)
+      - [19. Recipe Sorter](#19-recipe-sorter)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -53,7 +52,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
 |         7         |   Site User    |             View my liked recipes              |                             Find a specific recipe in my liked recipes                              |    ✔     |
 |         8         |   Site User    |             Remove a liked recipe              |                                Remove it from the liked recipes list                                |    ✔     |
 |         9         |   Site User    |             View a list of recipes             |                                     Select some recipes to use                                      |    ✔     |
-|        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ❌     |
+|        10         |   Site User    |       Sort a specific category of recipe       |           Find the most liked recipe in the specific category or sort the recipes by name           |    ✓     |
 |        11         |   Site User    |    Search for a recipe by name or category     |                               Find a specific recipe I'd like to use                                |    ✔     |
 |        12         |   Site User    |          View the details of a recipe          |                  Find more information about it such as the ingredients and steps                   |    ✔     |
 |        13         |   Site User    |          Visit another users' profile          |           Find more information about them and look at the recipes that they have created           |    ✔     |
@@ -159,11 +158,9 @@ The `search` feature allows the user to search for a specific recipe(s) and disp
 
 The `user page` allows the user to view another users profile and view all of their recipes that they have created.
 
-### Features Left to Implement
+#### 19. Recipe Sorter
 
-#### Recipe Sorter
-
-The recipe sorter will allow the users to sort the recipes by name (ascending and descending) and by age (ascending and descending).
+The `recipe sorter` allows the user to sort the displayed recipes by either name in alphabetical order or by the total time it takes to complete the recipe.
 
 ## Technologies Used
 
