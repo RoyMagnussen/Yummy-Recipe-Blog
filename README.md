@@ -29,6 +29,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
       - [17. Search Feature](#17-search-feature)
       - [18. User Page](#18-user-page)
       - [19. Recipe Sorter](#19-recipe-sorter)
+    - [Features Left To Implement](#features-left-to-implement)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
@@ -161,6 +162,13 @@ The `user page` allows the user to view another users profile and view all of th
 #### 19. Recipe Sorter
 
 The `recipe sorter` allows the user to sort the displayed recipes by either name in alphabetical order or by the total time it takes to complete the recipe.
+
+
+### Features Left To Implement
+
+- Cookie Policy Page
+- Sitemap Page
+- Category links in navigation
 
 ## Technologies Used
 
