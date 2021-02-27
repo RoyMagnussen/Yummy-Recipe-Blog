@@ -186,7 +186,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [Django](https://www.djangoproject.com/)
   - The project uses **Django** for the development of the websites.
 
-- [Bootstrap](https://www.getbootstrap.com
+- [Bootstrap](https://www.getbootstrap.com)
   - The project uses **Bootstrap** for the base styling for the website.)
 
 - [Python](https://www.python.org)
@@ -195,23 +195,16 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+For this project I have created tests for each app and have divided them into separate files, one file for the views and one for the forms.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+To run these apps, run the following command:
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+- Windows: `python manage.py test`
+- Linux and Mac: `python3 manage.py test`
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+This will then search for all files that begin with test and will run each of the tests within those files.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+I have tested the visuals of the website by using the built-in developer tools in browsers that were available to me. These include, Chrome, Edge, Firefox and Opera and I can say that they all displayed correctly on all screen sizes ranging from 320px (Small Mobile) to 2560px (4K).
 
 ## Deployment
 
