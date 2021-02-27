@@ -197,7 +197,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 For this project I have created tests for each app and have divided them into separate files, one file for the views and one for the forms.
 
-To run these apps, run the following command:
+To run these tests, run the following command:
 
 - Windows: `python manage.py test`
 - Linux and Mac: `python3 manage.py test`
