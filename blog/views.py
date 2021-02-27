@@ -178,7 +178,7 @@ def user_profile(request, username) -> render:
     user = Account.objects.get(username=request.user.username)
     recipes = Recipe.objects.all().filter(author=target_user)
     context = {
-        'title': f"{target_user['username']}'s Profile",
+        'title': f"{target_user.username}'s Profile",
         'user': user,
         'target_user': target_user,
         'recipes': recipes,
