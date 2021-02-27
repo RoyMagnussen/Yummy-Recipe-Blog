@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import environ
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ env.read_env(os.path.join(BASE_DIR, 'yummy_recipe_blog/.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -85,11 +86,15 @@ WSGI_APPLICATION = 'yummy_recipe_blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / env('DATABASE_NAME'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / env('DATABASE_NAME'),
-    }
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
 
 EMAIL_BACKENDS = {
