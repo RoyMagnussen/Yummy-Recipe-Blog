@@ -177,6 +177,21 @@ In this section, you should mention all of the languages, frameworks, libraries,
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 
+- [HTML](https://html.com)
+  - The project uses **HTML** for the structure of the web pages.
+
+- [CSS](https://www.w3.org/)
+  - The project uses **CSS** for the styling of the website.
+
+- [Django](https://www.djangoproject.com/)
+  - The project uses **Django** for the development of the websites.
+
+- [Bootstrap](https://www.getbootstrap.com
+  - The project uses **Bootstrap** for the base styling for the website.)
+
+- [Python](https://www.python.org)
+  - The project uses **Python** for the data processing for the website.
+
 
 ## Testing
 
