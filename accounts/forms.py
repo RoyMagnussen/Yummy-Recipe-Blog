@@ -33,6 +33,10 @@ class AccountLoginForm(AuthenticationForm):
     Args:
         AuthenticationForm (class): Standard user login form provided by Django. Can be found here: `django.contrib.auth.forms`
     """
+    
+    class Meta:
+        model = Account
+        fields = ['username', 'password']
 
     def __init__(self, request, *args, **kwargs):
         super(AccountLoginForm, self).__init__(
@@ -50,8 +54,8 @@ class ResetPasswordForm(PasswordResetForm):
         PasswordResetForm (class): Standard password reset form provided by Django. Can be found here: `django.contrib.auth.forms`
     """
 
-    def __init__(self):
-        super(PasswordResetForm, self).__init__()
+    def __init__(self, *args, **kwargs):
+        super(PasswordResetForm, self).__init__(*args, **kwargs)
 
         self.fields['email'].widget.attrs['class'] = 'form-control form-control-lg border-0'
 
@@ -63,6 +67,10 @@ class AccountChangePasswordForm(SetPasswordForm):
     Args:
         PasswordChangeForm (class): Standard password set form provided by Django. Can be found here: `django.contrib.auth.forms`
     """
+    
+    class Meta:
+        model = Account
+        fields = ['new_password1', 'new_password2']
 
     def __init__(self, *args, **kwargs):
         super(AccountChangePasswordForm, self).__init__(*args, **kwargs)

@@ -58,3 +58,7 @@ class TestViews(TestCase):
         response = self.client.get('/reset_password_confirm/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'accounts/reset_password_confirm.html')
+        
+    def test_get_update_user_page(self):
+        response = self.client.get('/profile/edit/')
+        self.assertEqual(response.status_code, 302)
