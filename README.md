@@ -36,9 +36,7 @@ Yummy! Recipe Blog is a pay once membership site where food lovers are able to c
     - [Deploying To Heroku](#deploying-to-heroku)
     - [Deploying to a local machine](#deploying-to-a-local-machine)
   - [Credits](#credits)
-    - [Content](#content)
     - [Media](#media)
-    - [Acknowledgements](#acknowledgements)
  
 ## UX
 
@@ -275,12 +273,5 @@ STRIPE_SECRET_KEY-stripe-secret-key
 
 ## Credits
 
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-
 ### Media
-- The photos used in this site were obtained from ...
-
-### Acknowledgements
-
-- I received inspiration for this project from X
+- The background image was obtained from [here](https://www.istockphoto.com/vector/seamless-pattern-supermarket-grocery-store-food-drinks-vegetables-fruits-fish-meat-gm1173579665-326026761?irgwc=1&esource=AFF_IS_IR_freevector.com_39452_&asid=freevector.com&cid=IS&utm_medium=affiliate&utm_source=freevector.com&clickid=R-KV00yqDxyLU3T0M-0V7wD0UkEQy3S%3AcSvYwc0&utm_term=freevector.com&utm_campaign=SRP&utm_content=718498&asset_type_keyword=_).
